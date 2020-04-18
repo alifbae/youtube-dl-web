@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+  integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="../static/custom.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<title>Youtube-DL Web</title>
+
+
+
+<div class='container'>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul class=flashes>
+    {% for message in messages %}
+    <div class="alert alert-warning text-center" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  
+  <div class="row header-buffer">
+    <div class="col-lg-12">
+      <h1 class="text-center">Youtube-DL Web UI</h1>
+      <h5 class="text-center">Created with 🖤 by alif for meem</h5>
+    </div>
+  </div>
+
+  <div class="row top-buffer"></div>
+
+  {% block body %}{% endblock %}
+</div>

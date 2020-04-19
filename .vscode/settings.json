@@ -1,6 +1,0 @@
-{
-  "python.linting.pylintEnabled": true,
-  "python.linting.enabled": true,
-  "python.pythonPath": "/home/alif/.pyenv/versions/venv_382/bin/python",
-  "python.jediEnabled": false
-}

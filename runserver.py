@@ -53,9 +53,11 @@ def list_downloads(root_path):
     downloads_path = path.join(root_path, 'downloads/')
     file_list = []
     for file_name in listdir(downloads_path):
-      file_path = join(downloads_path, file_name)
-      if isfile(file_path):
-        file_list.append((file_name, file_path))
+        if file_name == ".gitignore":
+            continue
+        file_path = join(downloads_path, file_name)
+        if isfile(file_path):
+            file_list.append((file_name, file_path))
     return file_list
 
 def download_yt(url):

@@ -23,6 +23,6 @@ Run `youtube-dl` as a web server allowing you to download youtube urls as mp3 fi
 
 ## Todo
 
-- [] Error Logging
-- [] Sqlite db
-- [] AJAX requests
+[ ] Error Logging
+[ ] Sqlite db
+[ ] AJAX requests

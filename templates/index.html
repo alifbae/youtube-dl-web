@@ -21,5 +21,28 @@
       </div>
     </form>
   </div>
-</div>
+
+  <div class="row top-buffer"></div>
+
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for file_info in downloads %}
+          <tr>
+            <td>{{file_info[0]}}</td>
+            <td><a href="{{ url_for('download_file', filename=file_info[0]) }}">Download</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
 {% endblock %}

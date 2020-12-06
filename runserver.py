@@ -11,13 +11,10 @@ from flask import Flask, request, redirect, url_for, render_template, flash, sen
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import DownloadError
 
-# region: init
 app = Flask(__name__)
 load_dotenv()
 app.secret_key = getenv('SECRET')
-# endregion
 
-# region: routes
 @app.route('/', methods=['GET'])
 def index():
     """
@@ -43,9 +40,7 @@ def download():
 @app.route('/download_file/<filename>', methods=['GET'])
 def download_file(filename):
     return send_from_directory('./downloads', filename, as_attachment=True)
-# endregion
 
-# region: utils
 def list_downloads(root_path):
     """
     returns a list of (file_path, file_name) from the downloads/ dir
@@ -84,9 +79,6 @@ def download_yt(url):
                 print("retrying")
                 continue
         break
-# endregion
 
-# region: main
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-# endregion
